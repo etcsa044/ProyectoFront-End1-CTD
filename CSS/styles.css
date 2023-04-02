@@ -333,6 +333,7 @@ footer form{
     width: 100%;
     display: flex;
     gap: 1rem;
+    margin-bottom: 3rem;
 }
 
 footer input{
@@ -359,10 +360,35 @@ footer .button-morado{
 
 footer ul{
     display: flex;
+    flex-wrap: wrap;
 }
 
 footer ul li a{
     color: var(--primary-blanco);
 }
 
+.ul-nav {
+    font-size: 1.6rem;
+    font-weight: 200;
+    width: 100%;
+}
 
+.ul-nav li{
+    width: 50%;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.footer-redes{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.footer-redes ul{
+    justify-content: space-between;
+}
+
+.footer-redes img{
+    margin: 5rem 0 2rem 0;
+}
