@@ -1,0 +1,368 @@
+/* globales */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONTS */
+html {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 62.5%;    /*1rem = 10px*/
+}
+
+/* COLORS */
+:root {
+    --primary-violeta: #8B48BF;
+    --primary-celeste: #3CDDF3;
+    --primary-blanco: #FFFFFF;
+    --neutro-azul-grisaceo: #1E1E26;
+    --neutro-azul-oscuro: #232851;
+    --neutro-gris: #b3b2b7;
+}
+
+/* LISTS */
+
+ol,
+ul {
+    list-style: none;
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+}
+
+/* Position */
+
+
+/* Buttons */
+.button-morado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background-color: var(--primary-violeta);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    height: 4.5rem;
+    width: 13.5rem;
+    border: none;
+    border-radius: 5rem;
+    transition: all 100ms;
+}
+
+.button-morado:hover{
+    background-color: rgb(139, 72, 191, .7);
+    opacity: 70%;
+}
+
+/* Body */
+Body{
+    width: 480px;
+    border-color: #000000;
+    z-index: 1;
+}
+
+/* HEADER */
+
+h1,
+nav,
+.header-button {
+    display: none;
+}
+
+/* Header */
+header {
+    height: 150px;
+    width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+/* Menu hamburguesa */
+header i {
+    color: #000000;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+/* MAIN */
+
+main {
+    width: 100%;
+}
+
+
+/* Promocion */
+
+/* Foto */
+
+.promocion {
+    width: 90%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+/* Contenedor Foto */
+.promocion-contenedor-foto {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+/* Foto */
+.promocion-contenedor-foto img {
+    display: inline-block;
+    width: 420px;
+    height: 350px;
+}
+
+/* Textos */
+.promocion-contenedor-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+/* textos - H2 */
+.contenedor-h2 {
+    text-align: right;
+}
+
+.contenedor-h2 h2 {
+    color: var(--neutro-azul-oscuro);
+    font-size: 5rem;
+}
+
+/* Promoción Párrafos */
+
+.promocion-contenedor-texto p {
+    color: #000000;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 2.6rem;
+    text-align: right;
+    margin: 3rem 0;
+}
+
+
+
+/* FEATURES */
+
+
+.introduccion{
+    margin-bottom: 6rem;
+}
+
+.features{
+    color: var(--primary-blanco);
+    background-color: var(--primary-celeste);
+    height: 31rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px;
+    margin-bottom: 5rem;  
+}
+
+.features h3{
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 4.1rem;
+    letter-spacing: .15rem;
+}
+
+.features p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+    line-height: 2.5rem;
+}
+
+
+/* Features Items */
+
+.introduccion{
+    counter-reset: contador 0;
+}
+
+.feature-item{
+    height: 21rem;
+    width: 45rem;
+    margin: 0 0 2rem 3rem;
+}
+
+.feature-item h4{
+    height: 4.5rem;
+    background-color: rgb(139, 72, 191, .3);
+    color: var(--neutro-azul-oscuro);
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 5rem 0 0 5rem ;
+}
+
+.before:before{
+    counter-increment: contador;
+    content: "0" counter(contador);
+    height: 4.5rem;
+    width: 7rem;
+    background-color: var(--primary-violeta);
+    color: var(--primary-blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    margin-right: 1.8rem;
+}
+
+.feature-item p{
+    color: var(--neutro-gris);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    line-height: 2.6rem;
+    padding: 3rem 3rem 3rem 1rem;
+}
+
+/* BEST PLAYERS OF THE MONTHS */
+
+.section-players{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7rem;
+}
+
+.section-players article:nth-child(3){
+    display: flex;
+}
+
+
+.section-players h3{
+    color: var(--neutro-azul-oscuro);
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.player{
+    background-color: #fafafa;
+    height: 22rem;
+    width: 44.5rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem auto 5rem auto;
+    padding: 0 3rem 3rem 3rem;
+    text-align: center;
+}
+
+.player img{
+    display: block;
+    height: 7.5rem;
+    width: 7.5rem;
+    margin-top: -3.5rem;
+}
+
+.player h4{
+    color: var(--neutro-azul-oscuro);
+    font-size: 1.6rem;
+    margin: 1.7rem 0;
+}
+
+.player p{
+    color: var(--neutro-gris);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.6rem;
+}
+
+/* BEST TEAM OF THE YEAR */
+
+.best-team{
+    color: var(--primary-blanco);
+    background-color: var(--primary-celeste);
+    padding: 4rem 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.best-team h3{
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.best-team .button-morado{
+    background-color:var(--neutro-azul-oscuro);
+}
+
+/* FO0TER */
+
+footer{
+    background-color: var(--neutro-azul-grisaceo);
+    color: var(--neutro-gris);
+    padding: 5rem;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+
+/*Footer Form */
+
+footer form{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+footer input{
+    background-color: var(--primary-blanco);
+    height: 4.5rem;
+    width: 30rem;
+    border-radius: 5rem;
+    padding-left: 1rem;
+    border: none;
+}
+
+footer input::placeholder{
+    color: var(--neutro-gris);
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: .05rem;
+}
+
+footer .button-morado{
+    width: 6.3rem;
+}
+
+/* Footer Ul */
+
+footer ul{
+    display: flex;
+}
+
+footer ul li a{
+    color: var(--primary-blanco);
+}
+
+
