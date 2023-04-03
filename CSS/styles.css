@@ -10,7 +10,8 @@
 /* FONTS */
 html {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 62.5%;    /*1rem = 10px*/
+    font-size: 62.5%;
+    /*1rem = 10px*/
 }
 
 /* COLORS */
@@ -39,7 +40,7 @@ a {
 
 
 /* Buttons */
-.button-morado{
+.button-morado {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,37 +53,48 @@ a {
     width: 13.5rem;
     border: none;
     border-radius: 5rem;
-    transition: all 100ms;
+    transition: all 300ms;
 }
 
-.button-morado:hover{
+.button-morado:hover {
     background-color: rgb(139, 72, 191, .7);
     opacity: 70%;
 }
 
-/* Body */
-Body{
-    width: 480px;
-    border-color: #000000;
-    z-index: 1;
-}
 
 /* HEADER */
 
 h1,
 nav,
-.header-button {
+header .button-morado {
     display: none;
 }
+
+@media (min-width: 1440px) {
+
+    /* Muestra Nav y Button */
+    nav,
+    header .button-morado {
+        display: block;
+    }
+}
+
 
 /* Header */
 header {
     height: 150px;
-    width: 480px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
+}
+
+@media (min-width: 1440px) {
+    header {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 /* Menu hamburguesa */
@@ -91,6 +103,36 @@ header i {
     font-size: 5rem;
     font-weight: 700;
 }
+
+@media (min-width: 1440px) {
+
+    /* Oculta Menú hamburguesa */
+    header i {
+        display: none;
+    }
+}
+
+/* Nav vista desktop */
+@media (min-width: 1440px) {
+
+    .nav ul {
+        color: var(--neutro-azul-oscuro);
+        font-size: 1.3rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .nav ul li a {
+        transition: all 300ms;
+    }
+
+    .nav ul li a:hover {
+        color: rgba(35, 40, 81, .4);
+    }
+}
+
 
 /* MAIN */
 
@@ -105,7 +147,7 @@ main {
 
 .promocion {
     width: 90%;
-    /* margin: 0 auto; */
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,11 +155,28 @@ main {
     margin-bottom: 5rem;
 }
 
+@media (min-width:1440px) {
+
+    .promocion {
+        width: 100%;
+    }
+}
+
+
+
 /* Contenedor Foto */
 .promocion-contenedor-foto {
     width: 100%;
     margin-bottom: 100px;
 }
+
+@media (min-width:1440px) {
+
+    .promocion-contenedor-foto {
+        width: 50%;
+    }
+}
+
 
 /* Foto */
 .promocion-contenedor-foto img {
@@ -126,8 +185,18 @@ main {
     height: 350px;
 }
 
+
+@media (min-width:1440px) {
+
+    .promocion-contenedor-foto img {
+        height: 460px;
+        width: 540px;
+    }
+}
+
 /* Textos */
 .promocion-contenedor-texto {
+    width: 45rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -155,32 +224,66 @@ main {
     margin: 3rem 0;
 }
 
+/* MAIN: 1440px */
+
 
 
 /* FEATURES */
 
 
-.introduccion{
+.introduccion {
     margin-bottom: 6rem;
 }
 
-.features{
+@media (min-width:1440px) {
+    .introduccion {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+
+.features {
     color: var(--primary-blanco);
     background-color: var(--primary-celeste);
     height: 31rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 40px 20px;
-    margin-bottom: 5rem;  
+    margin-bottom: 5rem;
 }
 
-.features h3{
+@media (min-width:1440px) {
+    .features {
+        background-color: var(--primary-violeta);
+        height: 17rem;
+        flex-direction: row;
+        align-items: center;
+        padding: 5rem 20rem;
+        gap: 10rem;
+    }
+}
+
+.features h3 {
     font-size: 3.6rem;
     font-weight: 500;
     line-height: 4.1rem;
     letter-spacing: .15rem;
 }
+
+@media (min-width:1440px) {
+
+    .features h3,
+    .features p {
+        width: 75rem;
+        letter-spacing: 0;
+    }
+}
+
+
 
 .features p {
     font-size: 1.6rem;
@@ -191,18 +294,34 @@ main {
 
 
 /* Features Items */
-
-.introduccion{
+/* Se implementó un contador automático para el pseudo-elemento before */
+.introduccion {
     counter-reset: contador 0;
 }
 
-.feature-item{
+@media (min-width:1440px) {
+    .introduccion {
+        background-color: #fafafa;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+.feature-item {
     height: 21rem;
     width: 45rem;
     margin: 0 0 2rem 3rem;
 }
 
-.feature-item h4{
+@media (min-width:1440px) {
+    .feature-item {
+        width: 60rem;
+        margin: 0 0 3rem 0;
+    }
+}
+
+.feature-item h4 {
     height: 4.5rem;
     background-color: rgb(139, 72, 191, .3);
     color: var(--neutro-azul-oscuro);
@@ -210,12 +329,18 @@ main {
     align-items: center;
     font-size: 1.6rem;
     font-weight: 700;
-    border-radius: 5rem 0 0 5rem ;
+    border-radius: 5rem 0 0 5rem;
 }
 
-.before:before{
+@media (min-width:1440px) {
+    .feature-item h4 {
+        background-color: transparent;
+    }
+}
+
+.before:before {
     counter-increment: contador;
-    content: "0" counter(contador);
+    content: "0"counter(contador);
     height: 4.5rem;
     width: 7rem;
     background-color: var(--primary-violeta);
@@ -227,37 +352,65 @@ main {
     margin-right: 1.8rem;
 }
 
-.feature-item p{
+
+.feature-item p {
     color: var(--neutro-gris);
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: .1rem;
     line-height: 2.6rem;
     padding: 3rem 3rem 3rem 1rem;
 }
 
+@media (min-width:1440px) {
+    .feature-item p {
+        padding: 1.5rem 0 0 8.9rem;
+    }
+}
+
 /* BEST PLAYERS OF THE MONTHS */
 
-.section-players{
+/* Contenedor Players */
+.section-players {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 7rem;
 }
 
-.section-players article:nth-child(3){
+@media (min-width:1440px) {
+    .section-players {
+        width: 140rem;
+        margin: 0 auto 7rem;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Selector para mostrar uno solo en Mobile */
+.section-players article:nth-child(3) {
     display: flex;
 }
 
-
-.section-players h3{
+/* Titulo seccion Players */
+.section-players h3 {
+    width: 100%;
     color: var(--neutro-azul-oscuro);
     font-size: 4rem;
     text-align: center;
     margin-bottom: 7rem;
 }
 
-.player{
+@media (min-width:1440px) {
+    .section-players h3 {
+        margin: 5rem 0 12rem;
+    }
+}
+
+
+/* a cards Players*/
+.player {
     background-color: #fafafa;
     height: 22rem;
     width: 44.5rem;
@@ -270,29 +423,43 @@ main {
     text-align: center;
 }
 
-.player img{
+@media (min-width:1440px) {
+    .player {
+        display: flex;
+        margin: 0 0 5rem 0;
+    }
+}
+
+.player img {
     display: block;
     height: 7.5rem;
     width: 7.5rem;
     margin-top: -3.5rem;
 }
 
-.player h4{
+.player h4 {
     color: var(--neutro-azul-oscuro);
     font-size: 1.6rem;
     margin: 1.7rem 0;
 }
 
-.player p{
+.player p {
     color: var(--neutro-gris);
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2.6rem;
 }
 
+@media (min-width:1440px) {
+    .section-players .button-morado {
+        align-self: center;
+    }
+}
+
 /* BEST TEAM OF THE YEAR */
 
-.best-team{
+/* contenedor Seccion */
+.best-team {
     color: var(--primary-blanco);
     background-color: var(--primary-celeste);
     padding: 4rem 8rem;
@@ -301,7 +468,18 @@ main {
     align-items: center;
 }
 
-.best-team h3{
+@media (min-width:1440px) {
+    .best-team {
+        background-color: var(--primary-violeta);
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem 14rem;
+    }
+}
+
+/* Best tema Titulo */
+.best-team h3 {
     font-size: 4rem;
     font-weight: 500;
     letter-spacing: .2rem;
@@ -309,13 +487,29 @@ main {
     margin-bottom: 5rem;
 }
 
-.best-team .button-morado{
-    background-color:var(--neutro-azul-oscuro);
+@media (min-width:1440px) {
+    .best-team h3 {
+        width: 50rem;
+        margin: 0;
+    }
+}
+
+/* Best Team Button */
+.best-team .button-morado {
+    background-color: var(--neutro-azul-oscuro);
+}
+
+@media (min-width:1440px) {
+    .best-team .button-morado {
+        color: var(--primary-violeta);
+        background-color: var(--primary-blanco);
+        margin-right: 7rem;
+    }
 }
 
 /* FO0TER */
 
-footer{
+footer {
     background-color: var(--neutro-azul-grisaceo);
     color: var(--neutro-gris);
     padding: 5rem;
@@ -326,17 +520,33 @@ footer{
     gap: 2.5rem;
 }
 
+@media (min-width:1440px) {
+    footer {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: start;
+        flex-wrap: wrap;
+        padding: 5.5rem 17rem;
+    }
+}
+
 
 /*Footer Form */
 
-footer form{
+footer form {
     width: 100%;
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
 }
 
-footer input{
+@media (min-width:1440px) {
+    footer form {
+        width: 30%;
+    }
+}
+
+footer input {
     background-color: var(--primary-blanco);
     height: 4.5rem;
     width: 30rem;
@@ -345,50 +555,95 @@ footer input{
     border: none;
 }
 
-footer input::placeholder{
+footer input::placeholder {
     color: var(--neutro-gris);
     font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: .05rem;
 }
 
-footer .button-morado{
+footer .button-morado {
     width: 6.3rem;
 }
 
 /* Footer Ul */
 
-footer ul{
+footer ul {
     display: flex;
     flex-wrap: wrap;
 }
 
-footer ul li a{
+
+footer ul li a {
     color: var(--primary-blanco);
 }
 
+/* contenedor "NAV" footer*/
 .ul-nav {
     font-size: 1.6rem;
     font-weight: 200;
     width: 100%;
 }
 
-.ul-nav li{
+@media (min-width:1440px) {
+    .ul-nav {
+        height: 16rem;
+        width: 40rem;
+    }
+}
+
+.ul-nav li {
     width: 50%;
     margin-bottom: 2rem;
     padding-left: 3rem;
 }
 
-.footer-redes{
+@media (min-width:1440px) {
+    .ul-nav li {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* contenedor redes footer */
+.footer-redes {
     width: 100%;
     font-size: 20px;
     text-align: center;
 }
 
-.footer-redes ul{
+@media (min-width:1440px) {
+    .footer-redes {
+        width: 17rem;
+        height: 16rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+}
+
+.footer-redes ul {
     justify-content: space-between;
 }
 
-.footer-redes img{
+/* logo footer */
+.footer-redes img {
     margin: 5rem 0 2rem 0;
+}
+
+@media (min-width:1440px) {
+    .footer-redes img {
+        margin: 0;
+    }
+}
+
+
+/* Parrafo final */
+@media (min-width:1440px) {
+    footer p {
+        width: 144.4rem;
+        margin: -2.5rem auto 0;
+        text-align: right;
+    }
 }
